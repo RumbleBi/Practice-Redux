@@ -4,8 +4,9 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import App from "./App";
 import rootReducer from "./modules";
+import { composeWithDevTools } from "redux-devtools-extension"; // 리덕스 개발자 도구
 
-const store = createStore(rootReducer); // 스토어 생성
+const store = createStore(rootReducer, composeWithDevTools()); // 스토어 생성
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
